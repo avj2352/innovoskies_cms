@@ -20,3 +20,5 @@ Description:
 ------------
 2. Initialized the CMS Website. Configuring the routes.php, database.php, index.php
 3. Creating Templates
+4. Removed database.php from application/config/ folder
+
