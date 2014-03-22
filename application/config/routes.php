@@ -38,12 +38,8 @@
 |
 */
 
-$route['default_controller'] = "page";
-/*Everytime, instead of throwing the 404 error, CI will run the Page controller*/
-$route['404_override'] = 'page';
-// $route[':any'] = 'page/index/$1';
-/*Separate routing rule for the articles with number-slug*/
-$route['article/(:num)/(:any)'] = 'article/index/$1/$2';
+$route['default_controller'] = "welcome";
+$route['404_override'] = '';
 
 
 /* End of file routes.php */

@@ -1,20 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
-/*This is a bit of the hacking inside the codeigniter*/
-/*Function to look for class files which donot start with the letter 'CI' under libraries folder*/
-function __autoload($classname){
-	/*If the file name does not begin with CI*/
-	if (strpos($classname, 'CI')!== 0) {
-		# code...
-		$file = APPPATH . 'libraries/' . $classname . '.php';
-		if(file_exists($file) && is_file($file)){
-			/*Command to include the file*/
-			@include_once($file);
-		}
-	}
-}
-
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -41,8 +26,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-/*Remove the index.php from the below array to make redirect without the index.php in URI*/
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -196,7 +180,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------
@@ -240,51 +224,35 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'ghi93iwerj2iefd@ji31nrou#@#1n/ljdf23p83493@';
-
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
-| Session Variables.
+| Session Variables
 |--------------------------------------------------------------------------
 |
-| 'sess_cookie_name'		= the name you want for the cookie.
+| 'sess_cookie_name'		= the name you want for the cookie
 | 'sess_expiration'			= the number of SECONDS you want the session to last.
 |   by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
-| 'sess_expire_on_close'	= Whether to cause the session to expire automatically.
-|   when the browser window is closed.
-| 'sess_encrypt_cookie'		= Whether to encrypt the cookie.
-| 'sess_use_database'		= Whether to save the session data to a database.
-| 'sess_table_name'			= The name of the session database table.
-| 'sess_match_ip'			= Whether to match the user's IP address when reading the session data.
-| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data.
-| 'sess_time_to_update'		= how many seconds between CI refreshing Session Information.
+| 'sess_expire_on_close'	= Whether to cause the session to expire automatically
+|   when the browser window is closed
+| 'sess_encrypt_cookie'		= Whether to encrypt the cookie
+| 'sess_use_database'		= Whether to save the session data to a database
+| 'sess_table_name'			= The name of the session database table
+| 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
+| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
+| 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
+|
 */
-
-
-$config['sess_cookie_name']		= 'cisession';
+$config['sess_cookie_name']		= 'ci_session';
 $config['sess_expiration']		= 7200;
-$config['sess_expire_on_close']	= TRUE;
-$config['sess_encrypt_cookie']	= TRUE;
-$config['sess_use_database']	= TRUE;
+$config['sess_expire_on_close']	= FALSE;
+$config['sess_encrypt_cookie']	= FALSE;
+$config['sess_use_database']	= FALSE;
 $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update']	= 300;
-
-/*
-*
-	$config['sess_cookie_name']		= 'ci_session';
-	$config['sess_expiration']		= 7200;
-	$config['sess_expire_on_close']	= FALSE;
-	$config['sess_encrypt_cookie']	= FALSE;
-	$config['sess_use_database']	= FALSE;
-	$config['sess_table_name']		= 'ci_sessions';
-	$config['sess_match_ip']		= FALSE;
-	$config['sess_match_useragent']	= TRUE;
-	$config['sess_time_to_update']	= 300;
-*
-*/
 
 /*
 |--------------------------------------------------------------------------
