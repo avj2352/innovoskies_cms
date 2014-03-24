@@ -22,3 +22,17 @@ Description:
 3. Creating Templates
 4. Removed database.php from application/config/ folder
 
+--------------------------------------------------------------------------------
+
+Innovo Skies Website - CMS
+---------------------------------------------
+Author: Pramod Jingade
+Date: 24th March 2014
+
+Description:
+------------
+2. Added the MY_Controller, MY_Model to core folder.
+3. Added the models and migrations from the CMS Website.
+4. Added Login authentication, User creation and authentication.
+
+--------------------------------------------------------------------------------
