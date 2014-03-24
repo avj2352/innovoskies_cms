@@ -13,7 +13,7 @@
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
             <li><?php echo anchor('admin/user', 'Users'); ?></li>
-            <li><?php echo anchor('admin/pages', 'Pages'); ?></li>
+            <li><?php echo anchor('admin/page', 'Pages'); ?></li>
           </ul>
         </div>
       </div>

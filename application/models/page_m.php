@@ -25,7 +25,7 @@ class Page_m extends MY_Model {
 		'slug' => array(
 			'field' => 'slug', 
 			'label' => 'Slug', 
-			'rules' =>'trim|required|max_length[100]|url_title|xss_clean|callback__unique_slug',
+			'rules' =>'trim|required|max_length[100]|url_title|xss_clean|callback__unique_slug', 
 			),
 		'body' => array(
 			'field' => 'body', 
