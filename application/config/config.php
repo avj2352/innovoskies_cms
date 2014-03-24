@@ -1,5 +1,19 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/*This is a bit of the hacking inside the codeigniter*/
+/*Function to look for class files which donot start with the letter 'CI' under libraries folder*/
+function __autoload($classname){
+	/*If the file name does not begin with CI*/
+	if (strpos($classname, 'CI')!== 0) {
+		# code...
+		$file = APPPATH . 'libraries/' . $classname . '.php';
+		if(file_exists($file) && is_file($file)){
+			/*Command to include the file*/
+			@include_once($file);
+		}
+	}
+}/*End of the __autoload function*/
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -14,7 +28,19 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+if (defined('ENVIRONMENT')){
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			$config['base_url']	= 'localhost/innovoskies';
+			break;
+		case 'production':
+			$config['base_url']	= 'www.innovoskies.com';
+			break;
+		default:
+			exit('The base_url is not configured correctly!');
+	}
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +52,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
