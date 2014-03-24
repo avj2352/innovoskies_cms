@@ -93,3 +93,8 @@ footer .col-xs-5 ul{
 	font-size: 12px;
 	list-style: none;
 }
+
+#login-modal.modal{
+	position: relative;
+	display: block;
+}
