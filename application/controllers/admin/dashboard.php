@@ -8,6 +8,8 @@ class Dashboard extends Admin_Controller {
 	}
 
 	public function index(){
+  		/*Load the SUBVIEW - index with the data array*/
+		$this->data['subview'] = 'admin/dashboard/index';
 		$this->load->view('admin/_layout_main', $this->data);
 		
 	}/*End of the index function*/
