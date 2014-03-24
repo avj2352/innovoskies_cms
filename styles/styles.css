@@ -98,3 +98,7 @@ footer .col-xs-5 ul{
 	position: relative;
 	display: block;
 }
+
+#myNav .navbar-inverse{
+	background-color: -webkit-linear-gradient(#210c02, #52250a 60%, #52250a);
+}

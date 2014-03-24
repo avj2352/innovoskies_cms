@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Welcome to Innovoskies</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/bootswatch.css" media="screen" />
-    <link rel="stylesheet" href="styles/styles.css"/>
-    <!-- HTML5 shiv IE8 support of HTML5 elements and media queries -->
-      <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
+<?php $this->load->view('admin/components/page_head'); ?>
   <body>
-    <div class="navbar navbar-inverse">
+    <div id="#myNav" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <a href="#" class="navbar-brand"><?php echo $meta_title; ?></a>
+          <?php echo anchor('admin/dashboard', $meta_title, 'class="navbar-brand"'); ?>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -25,12 +12,8 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html">Login</a></li>
+            <li><?php echo anchor('admin/pages', 'Pages'); ?></li>
+            <li><?php echo anchor('admin/Users', 'Users'); ?></li>
           </ul>
         </div>
       </div>
@@ -42,9 +25,9 @@
     <div id="homepage" class="container">
       <div class="row"></div>
       <div class="row">
-        <div class="col-md-8"><!-- Main Content Area -->
+        <div class="col-md-9"><!-- Main Content Area -->
 
-          <h1>Welcome to Innovoskies</h1>
+          <h1>Welcome to Dashboard</h1>
           <hr>
             <p>At <span class="gold">INNOVOSKIES</span>, We innovate new ideas with a blend of Creativity and Information, that fall in line with the clients requirement. Innovoskies assures that, it is a <span class="gold">ONE STOP SOLUTION</span> in media..</p>
 
@@ -56,17 +39,17 @@
             Our clients are from various sectors - <span class="gold">Medical, Educational, Religious and Business Entrepenuers</span>. Please visit our Gallery section to know more. Our Dedication &amp; Effort has resulted in our clients' satisfaction with our services.</p>
             <p>&nbsp;</p>
         </div>
-        <div class="col-md-4"><!-- Sidebar Area -->
+        <div class="col-md-3"><!-- Sidebar Area -->
           <div class="well">
             <ul class="list-group">
               <li class="list-group-item">
                 <span class="badge">4</span>
-                  <div style="font-size:18px; color: #FBB25A;">News Updates</div>
+                  <div style="font-size:18px; color: #FBB25A;">Sidebar Updates</div>
               </li>
             </ul>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, itaque, molestias nam nemo beatae libero maxime nisi placeat veniam fuga consequatur voluptatem sed ratione voluptatum aliquid quisquam necessitatibus suscipit expedita.</p>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, itaque, molestias nam nemo beatae libero maxime nisi placeat veniam fuga consequatur voluptatem sed ratione voluptatum aliquid quisquam necessitatibus suscipit expedita.</p>
+             <p><?php echo mailto('avj2352@gmail.com', '<span class="glyphicon glyphicon-user"></span> avj2352@gmail.com'); ?></p>
+             <hr> 
+              <p><?php echo anchor('admin/user/logout', '<span class="glyphicon glyphicon-off"></span> Logout'); ?></p>
           </div><!-- End of the Sidebar -->
         </div>
       </div>
@@ -81,7 +64,7 @@
         </div>
         <!-- Second Row -->
         <div class="row">
-          <div class="col-xs-2" style="width:100px;"><img src="img/is_etched.png" class="img-responsive"></div>
+          <div class="col-xs-2" style="width:100px;"><img src="<?php echo base_url('img/is_etched.png'); ?>" class="img-responsive"></div>
           <div class="col-xs-5">
             <ul>
               <li>Copyright 2013 Innovo Skies&nbsp;&copy;.</li>

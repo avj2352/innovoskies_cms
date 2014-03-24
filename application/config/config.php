@@ -32,10 +32,10 @@ if (defined('ENVIRONMENT')){
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-			$config['base_url']	= 'localhost/innovoskies';
+			$config['base_url']	= '';
 			break;
 		case 'production':
-			$config['base_url']	= 'www.innovoskies.com';
+			$config['base_url']	= '';
 			break;
 		default:
 			exit('The base_url is not configured correctly!');

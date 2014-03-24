@@ -107,4 +107,4 @@ class User_M extends MY_Model {
 	}/*End of hash function*/
 
 }/* End of file  */
-/* Location: ./application/models/ */
+/* Location: ./application/models/user_m */
