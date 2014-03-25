@@ -1,11 +1,12 @@
 <section>
-	<h2>Order Pages</h2>
+	<h3>Order Pages</h3>
+  <hr>
 	<div class="alert alert-dismissable alert-info">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <strong>Note:</strong> Drag Pages around, then click on Save button to update the changes!
 </div>
 	<div id="orderResult"></div>
-	<input type="button" id ="save" value = "Save" class="btn btn-info" />
+<input type="button" id ="save" value = "Save" class="btn btn-info" />
 </section>
 
 

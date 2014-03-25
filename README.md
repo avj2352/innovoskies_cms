@@ -9,6 +9,8 @@ Description:
 3. Added the models and migrations from the CMS Website.
 4. Added Login authentication, User creation and authentication.
 5. Added TinyMCE plugin for editing pages.
+6. Added Sortale feature to the pages.
+7. Added Articles - new/edit articles section to the CMS.
 
 --------------------------------------------------------------------------------
 

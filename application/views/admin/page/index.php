@@ -1,5 +1,5 @@
 <section>
-	<h3>Users</h3>
+	<h3>Pages</h3>
 	<?php echo anchor('admin/page/edit', '<span class="glyphicon glyphicon-plus"></span> Add a Page'); ?>
 	<hr>
 	<table class="table table-striped">
