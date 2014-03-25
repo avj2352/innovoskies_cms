@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?php echo base_url('styles/bootstrap.min.css'); ?>"/>
+    <link href="<?php echo base_url('styles/admin.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('styles/bootswatch.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo base_url('styles/styles.css'); ?>"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -17,7 +18,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script>
         <script src="<?php echo base_url('js/bootstrap-datepicker.js'); ?>"></script>
         <?php if(isset($sortable) && $sortable === TRUE): ?>
         <script src="<?php echo base_url('js/jquery-ui-1.9.1.custom.min.js'); ?>"></script>

@@ -14,6 +14,7 @@
           <ul class="nav navbar-nav">
             <li><?php echo anchor('admin/user', 'Users'); ?></li>
             <li><?php echo anchor('admin/page', 'Pages'); ?></li>
+            <li><?php echo anchor('admin/page/order', 'Order Pages'); ?></li>
           </ul>
         </div>
       </div>
@@ -96,7 +97,5 @@
         <!-- Modal Window Ends here-->
   <!-- /////////////////////////////////////////////////////////////////////////// -->
     <!-- Homepage Body ends here -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

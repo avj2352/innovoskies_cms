@@ -1,8 +1,11 @@
 <section>
 	<h2>Order Pages</h2>
-	<p class="bs-callout bs-callout-danger">Drag to order pages and then Click on 'Save'</p>
+	<div class="alert alert-dismissable alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>Note:</strong> Drag Pages around, then click on Save button to update the changes!
+</div>
 	<div id="orderResult"></div>
-	<input type="button" id ="save" value = "Save" class="btn btn-primary" />
+	<input type="button" id ="save" value = "Save" class="btn btn-info" />
 </section>
 
 
