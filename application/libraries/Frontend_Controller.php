@@ -9,14 +9,13 @@ class Frontend_Controller extends MY_Controller {
 		parent::__construct();
 
 		/*Load stuff from page_m*/
-// 		$this->load->model('page_m');
-// 		$this->load->model('article_m');
-		var_dump("Welcome from the FrontEnd Controller");
+		$this->load->model('page_m');
+		$this->load->model('article_m');
 	
 
 		/*Fetch Navigation*/
-// 		$this->data['menu'] = $this->page_m->get_nested();
-// 		$this->data['news_archive_link'] = $this->page_m->get_archive_link();
+		$this->data['menu'] = $this->page_m->get_nested();
+		$this->data['news_archive_link'] = $this->page_m->get_archive_link();
 	}
 
 	public function index()

@@ -53,7 +53,8 @@ function e($string){
 /*CMS Helper - Get Menu function*/    
 function get_menu ($array, $child = FALSE){
 
-    /*We need to first get access to CI Super object - getinstance*/
+    /*We need to add the active ppty to the current page navbar*/
+    /*For that - We need to first get access to CI Super object - getinstance*/
     $CI =& get_instance();
     $str = '';
     
@@ -64,15 +65,17 @@ function get_menu ($array, $child = FALSE){
 
         /*If a page has a child, we should add some properties to the list item*/
         foreach ($array as $item) {
-            /*Pass the */
+            /*Pass the str to the current active page opened*/
+            $active = $CI->uri->segment(1) == $item['slug'] ? TRUE: FALSE;
         if (isset($item['children']) && count($item['children'])) {
-            $str .= '<li class="dropdown">';
+            $str = 
+            $str .= $active ? '<li class="dropdown active">' : '<li class="dropdown">';
             $str .= '<a class="dropdown-toggle" data-toggle="dropdown" href ="' .site_url(e($item['slug'])) . '">' . e($item['title']);
             $str .= '<b class="caret"></b></a>' . PHP_EOL;
             $str .=  get_menu ($item['children'], TRUE);
         }
         else{
-            $str .= '<li>';
+            $str .= $active ? '<li class="active">' : '<li>';
             $str .= '<a href ="'. site_url(e($item['slug'])) .'">' . e($item['title']) . '</a>';
         }
             $str .= '</li>' . PHP_EOL;
