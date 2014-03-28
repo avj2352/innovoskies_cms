@@ -18,7 +18,11 @@
             <!-- The second value should hold an array with all the available options -->
             <!-- The third value is a condition: -->
             <!-- 1. Set value if post variable is there, else 2. Fetch from the DB  -->
-    <td><?php echo form_dropdown('template', array('page' => 'Page', 'news_archive' => 'News Archive', 'homepage' => 'Homepage'), $this->input->post('template') ? $this->input->post('template') : $page->template, 'class="form-control"' ); ?></td>
+    <td><?php echo form_dropdown('template', array('homepage' => 'Homepage', 
+                'news_archive' => 'News Archive', 
+                'contactus' => 'Contact Us', 
+                'gallery' => 'Gallery'), 
+                $this->input->post('template') ? $this->input->post('template') : $page->template, 'class="form-control"' ); ?></td>
         </tr>
         <tr>
             <td>Title:</td>

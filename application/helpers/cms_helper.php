@@ -33,6 +33,8 @@ function article_links($articles){
 
 
 
+
+
 function limit_to_numwords($string, $numwords = 1){
     $excerpt = explode(' ', $string, $numwords +1);
     if(count($excerpt) >= $numwords){
@@ -84,6 +86,12 @@ function get_menu ($array, $child = FALSE){
     }
     return $str;
     }/*end of get_menu helper function*/
+
+function get_image_name($fullpath){
+    $pattern = "([\w-]+\.)";
+    preg_match($pattern, $fullpath, $matches);
+    var_dump($matches);
+}    
 
 
 /*The following custom helper function will replace the variable 

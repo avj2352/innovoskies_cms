@@ -99,7 +99,7 @@ class Gallery_m extends MY_Model {
             //Get the uploaded file metadata into an array
                         $upload_data = $this->upload->data();
                         // var_dump($upload_data); die();
-                        $upload_data['file_name']!='' ? $file = $upload_data['full_path'] : $file = '';
+                        $upload_data['file_name']!='' ? $file = $upload_data['file_name'] : $file = '';
                         $data[$field] = $file;
                         // var_dump($data); die();
 			}else{

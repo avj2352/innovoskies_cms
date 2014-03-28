@@ -53,6 +53,14 @@ class Page extends Frontend_Controller {
         $this->data['articles'] = $this->article_m->get();
     }
 
+    private function _gallery(){
+        /*Load the articles from the db*/
+        $this->load->model('gallery_m');
+        $this->db->where('pubdate <=', date('Y-m-d'));
+        $this->db->limit(6);
+        $this->data['artworks'] = $this->gallery_m->get();
+    }
+
     /*Setting a method for new_acrhive method*/
     private function _news_archive(){
   //    Count all articles

@@ -7,6 +7,7 @@
 		<tr>
 			<th>Name</th>
 			<th>Date</th>
+			<th>File</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -17,6 +18,7 @@
 		<tr>
 			<td><?php echo anchor('admin/gallery/edit/'.$art->id, $art->title); ?></td>
 			<td><?php echo $art->pubdate; ?></td>
+			<td><?php echo $art->path; ?></td>
 			<!-- This calls the cms_helper file from the helper folder -->
 			<td><?php echo btn_edit('admin/gallery/edit/'. $art->id); ?></td>
 			<td><?php echo btn_delete('admin/gallery/delete/'. $art->id); ?></td>

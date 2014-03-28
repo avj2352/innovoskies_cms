@@ -10,7 +10,8 @@ class Gallery extends Admin_Controller {
 		$config = array(
                     'upload_path' => APPPATH . '../img/gallery',
                     'allowed_types' => 'jpg',
-                    'max_size' => 2000
+                    'max_size' => 2000,
+                    'overwrite' => TRUE
                 );
         /*Calling the Upload library and passing the $config array*/
         $this->load->library('upload', $config);
@@ -78,8 +79,8 @@ class Gallery extends Admin_Controller {
 
 	public function delete($id){
 		/*Lesson 10: To delete the page WITH ID*/
-		$this->page_m->delete($id);
-		redirect('admin/page');
+		$this->gallery_m->delete($id);
+		redirect('admin/gallery');
 
 	}/*End of the delete function*/
 

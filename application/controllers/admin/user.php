@@ -8,7 +8,7 @@ class User extends Admin_Controller {
 
 	/*User Creation - CRUD methods*/
 
-	/*TODO index method to display the list of users first*/
+	
 	public function index(){
 		$this->data['users'] = $this->user_m->get();
 		
@@ -55,7 +55,7 @@ class User extends Admin_Controller {
 	}/*End of the edit function*/
 
 
-	/*TODO delete method that will delete the current user from the list*/
+	
 	public function delete($id){}
 
 
