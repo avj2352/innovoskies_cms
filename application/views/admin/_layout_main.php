@@ -16,6 +16,7 @@
             <li><?php echo anchor('admin/page', 'Pages'); ?></li>
             <li><?php echo anchor('admin/page/order', 'Order Pages'); ?></li>
             <li><?php echo anchor('admin/article', 'News Articles'); ?></li>
+            <li><?php echo anchor('admin/gallery', 'Gallery'); ?></li>
           </ul>
         </div>
       </div>
