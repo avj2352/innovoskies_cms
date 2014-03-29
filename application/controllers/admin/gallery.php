@@ -9,7 +9,7 @@ class Gallery extends Admin_Controller {
 		$this->load->model('gallery_m');
 		$config = array(
                     'upload_path' => APPPATH . '../img/gallery',
-                    'allowed_types' => 'jpg',
+                    'allowed_types' => 'jpg|jpeg|png',
                     'max_size' => 2000,
                     'overwrite' => TRUE
                 );

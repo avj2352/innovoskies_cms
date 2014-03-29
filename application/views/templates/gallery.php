@@ -5,7 +5,6 @@
           <hr>
             <?php echo $content; ?>
             <p>&nbsp;</p>
-
             <div class="col-md-12">    
       <div class="content">
         <div id="rg-gallery" class="rg-gallery">

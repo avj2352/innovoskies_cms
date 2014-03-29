@@ -41,7 +41,7 @@
             <ul class="list-group">
               <li class="list-group-item">
                 <span class="badge">4</span>
-                  <div style="font-size:18px; color: #FBB25A;"><a href="#">News Articles</a></div>
+                  <div style="font-size:18px; color: #FBB25A;"><?php echo anchor($news_archive_link, 'News Articles'); ?></div>
               </li>
             </ul>
              <?php $articles = array_slice($articles, 2); ?>

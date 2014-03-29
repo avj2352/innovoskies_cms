@@ -155,7 +155,7 @@ class Page extends Frontend_Controller {
         $count = $this->db->count_all_results('articles');
         // dump($count);
         // Set up a pagination method
-        $perpage = 3;
+        $perpage = 4;
         if($count > $perpage){
 
 
