@@ -5,10 +5,22 @@
 function get_excerpt($article, $numwords = 50){
     $string = '';
     $url = 'article/' . intval($article->id) . '/' . e($article->slug);
-    $string .='<h2>' . anchor($url, e($article->title)) . '</h2>';
+    $string .='<span class="glyphicon glyphicon-list-alt"></span><h2>' . anchor($url, e($article->title)) . '</h2>';
     $string .= '<p class = "pubdate">' . e($article->pubdate) . '</p>';
     $string .= '<p align = "justify">' . limit_to_numwords(strip_tags($article->body), $numwords) . '</p>';
     $string .= '<p>' . anchor($url, 'Read more >', array('title'=>e($article->title))) . '</p>';
+
+
+    return $string;
+}/*Since this will vary, we are using the get_excerpt custom function*/
+
+
+function get_artwork($artwork, $numwords = 50){
+    $string = '';
+    $string .='<p> <em>' . $artwork->pubdate . '</em></p>';
+    $string .= '<img src="' . base_url('img/gallery/'.$artwork->path). '" width="50px" height="50px" class="img-circle"';
+    $string .= '<p class = "pubdate"> <span class="gold">' . e($artwork->title) . '</span></p>';
+    $string .= '<p align = "justify">' . limit_to_numwords(strip_tags($artwork->description), $numwords) . '</p>';
 
 
     return $string;
@@ -26,6 +38,17 @@ function article_links($articles){
         # code. ..
         $url = article_link($article);
         $string .= '<li>' . get_excerpt($article, 10) . '<hr></li>';
+    }
+    $string .= '</ul>';
+    return $string;
+}/*End of the article_links method*/
+
+
+function artwork_links($artworks){
+    $string ='<ul>';
+    foreach ($artworks as $art) {
+        # code. ..
+        $string .= '<li>' . get_artwork($art, 10) . '<hr></li>';
     }
     $string .= '</ul>';
     return $string;
@@ -132,12 +155,15 @@ if (!function_exists('dump')) {
     }
 }
 
-
-
-
 if (!function_exists('dump_exit')) {
     function dump_exit($var, $label = 'Dump', $echo = TRUE) {
         dump ($var, $label, $echo);
         exit;
-    }
+    }   
+}
+
+function web_address(){
+ $string = '';
+ $string .='#38/1, 1st Main Road, 2nd Floor, <br> Upadyaya Layout, Bangalore - 560 056';
+ return $string;   
 }

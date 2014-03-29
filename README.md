@@ -1,6 +1,32 @@
 Innovo Skies Website - CMS
 ---------------------------------------------
 Author: Pramod Jingade
+Date: 29th March 2014
+
+Description:
+------------
+1. Completed Homepage Template of Innovoskies
+2. Completed the Gallery Template for Innovoskies
+3. Completed the ContactUs Template for Innovoskies
+
+--------------------------------------------------------------------------------
+
+Innovo Skies Website - CMS
+---------------------------------------------
+Author: Pramod Jingade
+Date: 28th March 2014
+
+Description:
+------------
+1. Completed Homepage Template of Innovoskies
+2. Added the gallery migration file, model, Admin Controller, Frontend Controller
+3. Completed Gallery Module to the website
+
+--------------------------------------------------------------------------------
+
+Innovo Skies Website - CMS
+---------------------------------------------
+Author: Pramod Jingade
 Date: 25th March 2014
 
 Description:

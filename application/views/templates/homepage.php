@@ -4,21 +4,52 @@
           <h1>Welcome to <?php echo $meta_title; ?></h1>
           <hr>
             <?php echo $content; ?>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
+            
+          <hr>
+          <?php if(isset($articles[0])): ?>
+          <h1>News Articles</h1>
+          <div class="col-md-6 well" style="opacity: 0.7;">
+            <?php echo get_excerpt($articles[0]); ?>
+          </div>
+           <?php endif; ?>
+           <?php if(isset($articles[1])): ?> 
+           <div class="col-md-6 well" style="opacity: 0.7;">
+            <?php echo get_excerpt($articles[1]); ?>
+          </div>
+          <?php endif; ?>
+           <p>&nbsp;</p>
             <p>&nbsp;</p>
         </div>
-        <div class="col-md-3"><!-- Sidebar Area -->
+        <div class="sidebar col-md-3"><!-- Sidebar Area -->
+          <!-- Gallery Sidebar -->
+          <div class="well">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="badge"><?php echo count($artworks); ?></span>
+                  <div style="font-size:18px; color: #FBB25A;"><?php echo anchor('gallery', 'New in Gallery', 'attributs'); ?></div>
+              </li>
+            </ul>
+             <?php if(isset($artworks)): ?>
+                 <?php echo artwork_links($artworks); ?> 
+             <?php else: ?>
+                  <p><?php echo "Currently There are no Artworks"; ?></p>
+             <?php endif; ?>
+          </div><!-- Gallery Sidebar ends here-->
+          <div>&nbsp;</div>
+          <!-- Articles Sidebar -->
           <div class="well">
             <ul class="list-group">
               <li class="list-group-item">
                 <span class="badge">4</span>
-                  <div style="font-size:18px; color: #FBB25A;">Sidebar Updates</div>
+                  <div style="font-size:18px; color: #FBB25A;"><a href="#">News Articles</a></div>
               </li>
             </ul>
-             <p><?php echo mailto('avj2352@gmail.com', '<span class="glyphicon glyphicon-user"></span> avj2352@gmail.com'); ?></p>
-             <hr> 
-              <p><?php echo anchor('admin/user/logout', '<span class="glyphicon glyphicon-off"></span> Logout'); ?></p>
-          </div><!-- End of the Sidebar -->
-        </div>
+             <?php $articles = array_slice($articles, 2); ?>
+             <?php if(isset($articles)): ?>
+                 <?php echo article_links($articles); ?> 
+             <?php else: ?>
+                  <p><?php echo "Currently There are no Articles"; ?></p>
+             <?php endif; ?>
+          </div><!-- End of the Articles Sidebar -->
+        </div><!-- Sidebar ends here -->
 <!-- Homepage Template -->        

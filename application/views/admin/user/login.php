@@ -19,6 +19,7 @@
     	<tr>
     		<td></td>
     		<td><?php echo form_submit('submit', 'Log in', 'class="btn btn-info"'); ?></td>
+            <td><?php echo anchor('/','Go Back', 'class="btn btn-success btn-sm"'); ?></td>
     	</tr>
     </table>
     <?php  echo form_close(); ?>

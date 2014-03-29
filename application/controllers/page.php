@@ -49,16 +49,100 @@ class Page extends Frontend_Controller {
         /*Load the articles from the db*/
         $this->load->model('article_m');
         $this->db->where('pubdate <=', date('Y-m-d'));
-        $this->db->limit(6);
+        $this->db->limit(4);
         $this->data['articles'] = $this->article_m->get();
+        
+        $this->load->model('gallery_m');
+        $this->db->where('pubdate <=', date('Y-m-d'));
+        $this->db->limit(2);
+        $this->data['artworks'] = $this->gallery_m->get();
     }
 
     private function _gallery(){
         /*Load the articles from the db*/
         $this->load->model('gallery_m');
         $this->db->where('pubdate <=', date('Y-m-d'));
-        $this->db->limit(6);
         $this->data['artworks'] = $this->gallery_m->get();
+
+        /*Load the articles from the db*/
+        $this->load->model('article_m');
+        $this->db->where('pubdate <=', date('Y-m-d'));
+        $this->db->limit(4);
+        $this->data['articles'] = $this->article_m->get();
+    }
+
+    private function _contactus(){
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->load->library('session');
+
+        $this->data['recent_news'] = $this->article_m->get_recent();
+
+        $rules = array(
+        'name' => array(
+            'field' => 'name', 
+            'label' => 'Name', 
+            'rules' =>'trim|required|max_length[100]|xss_clean',
+            ),
+        'email' => array(
+            'field' => 'email', 
+            'label' => 'Email', 
+            'rules' =>'trim|required|email|xss_clean',
+            ),
+        'subject' => array(
+            'field' => 'subject', 
+            'label' => 'Subject', 
+            'rules' =>'trim|max_length[100]|xss_clean', 
+            ),
+        'body' => array(
+            'field' => 'body', 
+            'label' => 'Body', 
+            'rules' =>'trim|xss_clean',
+            ),
+        );
+
+        $this->form_validation->set_rules($rules);
+
+        if($this->form_validation->run() == TRUE){
+            /*To setup a new method to set of values to be stored properly*/
+            $name = $this->input->post('name');
+            $email = $this->input->post('email');                                
+            $subject = $this->input->post('subject');                                
+            $body = $this->input->post('body');                                
+
+            $message_string = "<h3>Hi Admin</h3>";
+            $message_string .= "<p><strong>" . $name . "</strong> has sent a request. Please find the details below:</p>";
+            $message_string .= "<hr>";
+            $message_string .= "<p><strong>Name</strong>: " . $name . "</p>";
+            $message_string .= "<p><strong>Email</strong>: " . $email . "</p>";
+            $message_string .= "<p><strong>Subject</strong>: " . $subject . "</p>";
+            $message_string .= "<p><strong>Description</strong>:</p><hr>";
+            $message_string .= "<p>" . $body . "</p>";
+            $message_string .= "<hr>";
+            $message_string .= "<p>Please contact <strong>" . $name . "</strong></p>";
+
+            $this->load->library('email');
+            $this->email->set_newline("\r\n");
+            $this->email->from($email, $name);
+            
+            $this->email->to('pramod@innovoskies.com');
+            $this->email->cc('divine4d@gmail.com'); 
+            $this->email->reply_to('pramod@innovoskies.com', 'Pramod Jingade');
+            $this->email->subject('Innovoskies Mail');
+            $this->email->message($message_string);
+
+            if($this->email->send()){
+                $mail = true;
+                $this->session->set_flashdata('mail', $mail);
+                redirect('contact');
+            }else{
+                show_error($this->email->print_debugger());
+            }             
+        }/*End of Form Validation*/
+
+
+
+//      dump("Welcome from the Page template");
     }
 
     /*Setting a method for new_acrhive method*/

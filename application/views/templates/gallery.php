@@ -5,7 +5,7 @@
           <hr>
             <?php echo $content; ?>
             <p>&nbsp;</p>
-            <hr>
+
             <div class="col-md-12">    
       <div class="content">
         <div id="rg-gallery" class="rg-gallery">
@@ -33,17 +33,20 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
         </div>
-        <div class="col-md-3"><!-- Sidebar Area -->
+        <div class="sidebar col-md-3"><!-- Sidebar Area -->
+          <!-- Articles Sidebar -->
           <div class="well">
             <ul class="list-group">
               <li class="list-group-item">
                 <span class="badge">4</span>
-                  <div style="font-size:18px; color: #FBB25A;">Sidebar Updates</div>
+                  <div style="font-size:18px; color: #FBB25A;"><a href="#">News Articles</a></div>
               </li>
             </ul>
-             <p><?php echo mailto('avj2352@gmail.com', '<span class="glyphicon glyphicon-user"></span> avj2352@gmail.com'); ?></p>
-             <hr> 
-              <p><?php echo anchor('admin/user/logout', '<span class="glyphicon glyphicon-off"></span> Logout'); ?></p>
-          </div><!-- End of the Sidebar -->
+             <?php if(isset($articles)): ?>
+                 <?php echo article_links($articles); ?> 
+             <?php else: ?>
+                  <p><?php echo "Currently There are no Articles"; ?></p>
+             <?php endif; ?>
+          </div><!-- End of the Articles Sidebar -->
         </div>
 <!-- Homepage Template -->        
