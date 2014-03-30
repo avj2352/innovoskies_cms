@@ -5,7 +5,7 @@
 function get_excerpt($article, $numwords = 50){
     $string = '';
     $url = 'article/' . intval($article->id) . '/' . e($article->slug);
-    $string .='<span class="glyphicon glyphicon-list-alt"></span><h2>' . anchor($url, e($article->title)) . '</h2>';
+    $string .='<span class="glyphicon glyphicon-file"></span><h2>' . anchor($url, e($article->title)) . '</h2>';
     $string .= '<p class = "pubdate">' . e($article->pubdate) . '</p>';
     $string .= '<p align = "justify">' . limit_to_numwords(strip_tags($article->body), $numwords) . '</p>';
     $string .= '<p>' . anchor($url, 'Read more >', array('title'=>e($article->title))) . '</p>';

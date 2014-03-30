@@ -104,7 +104,7 @@ footer .col-xs-5 ul{
 	background-color: -webkit-linear-gradient(#210c02, #52250a 60%, #52250a);
 }
 
-.col-md-9 span.glyphicon.glyphicon-list-alt{
+.col-md-9 span.glyphicon.glyphicon-file{
 	display: none;
 }
 
@@ -145,7 +145,7 @@ footer .col-xs-5 ul{
 	font-size: 12px;
 }
 
-.sidebar.col-md-3 span.glyphicon.glyphicon-list-alt{	
+.sidebar.col-md-3 span.glyphicon.glyphicon-file{	
 	font-size: 20px;
 	float: left;
 	display: inline;
