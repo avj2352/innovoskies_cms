@@ -28,12 +28,19 @@ class Migration_Create_gallery extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '100',
 				),
+			'pubdate' =>array(
+				'type' => 'DATE',
+				),
 			'path' =>array(
 				'type' => 'VARCHAR',
 				'constraint' => '100',
 				),
 			'description' =>array(
 				'type' => 'TEXT',
+				),
+			'works'=>array(
+				'type' => 'VARCHAR',
+				'constraint' => '100',
 				),
 			));
 		$this->dbforge->add_key('id', TRUE);
