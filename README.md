@@ -1,6 +1,19 @@
 Innovo Skies Website - CMS
 ---------------------------------------------
 Author: Pramod Jingade
+Date: 30th March 2014
+
+Description:
+------------
+1. Updated the 007_create_gallery.php Migrations file to sync with the DB structure
+2. Final changes to the Beta Version of the Website - initial testing to begin
+3. Added the Articles Module to the Website
+
+--------------------------------------------------------------------------------
+
+Innovo Skies Website - CMS
+---------------------------------------------
+Author: Pramod Jingade
 Date: 29th March 2014
 
 Description:
