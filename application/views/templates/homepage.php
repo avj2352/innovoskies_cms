@@ -25,7 +25,7 @@
           <div class="well">
             <ul class="list-group">
               <li class="list-group-item">
-                <span class="badge"><?php echo count($artworks); ?></span>
+                <span class="badge"><?php echo $art_count; ?></span>
                   <div style="font-size:18px; color: #FBB25A;"><?php echo anchor('gallery', 'New in Gallery', 'attributs'); ?></div>
               </li>
             </ul>
@@ -40,7 +40,7 @@
           <div class="well">
             <ul class="list-group">
               <li class="list-group-item">
-                <span class="badge">4</span>
+                <span class="badge"><?php echo $articles_count; ?></span>
                   <div style="font-size:18px; color: #FBB25A;"><?php echo anchor($news_archive_link, 'News Articles'); ?></div>
               </li>
             </ul>

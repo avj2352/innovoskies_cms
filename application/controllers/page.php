@@ -48,13 +48,17 @@ class Page extends Frontend_Controller {
     private function _homepage(){
         /*Load the articles from the db*/
         $this->load->model('article_m');
+        $this->data['articles_count'] = $this->db->count_all_results('articles');
+        //echo $this->data['articles_count']; die();
         $this->db->where('pubdate <=', date('Y-m-d'));
         $this->db->limit(4);
         $this->data['articles'] = $this->article_m->get();
         
         $this->load->model('gallery_m');
+        $this->data['art_count'] = $this->db->count_all_results('gallery');
         $this->db->where('pubdate <=', date('Y-m-d'));
         $this->db->limit(2);
+        
         $this->data['artworks'] = $this->gallery_m->get();
     }
 
@@ -66,6 +70,7 @@ class Page extends Frontend_Controller {
 
         /*Load the articles from the db*/
         $this->load->model('article_m');
+        $this->data['articles_count'] = $this->db->count_all_results('articles');
         $this->db->where('pubdate <=', date('Y-m-d'));
         $this->db->limit(4);
         $this->data['articles'] = $this->article_m->get();
@@ -149,6 +154,7 @@ class Page extends Frontend_Controller {
     private function _news_archive(){
   //    Count all articles
         $this->load->model('article_m');
+        $this->data['articles_count'] = $this->db->count_all_results('articles');
         $this->data['recent_news'] = $this->article_m->get_recent();
         
         $this->db->where('pubdate <=', date('Y-m-d'));

@@ -45,7 +45,7 @@
             <ul class="list-group">
              <?php $articles = array_slice($articles, 3); ?>
               <li class="list-group-item">
-                <span class="badge"><?php echo count($articles); ?></span>
+                <span class="badge"><?php echo $articles_count; ?></span>
                   <div style="font-size:18px; color: #FBB25A;"><?php echo anchor($news_archive_link, 'News Articles'); ?></div>
               </li>
             </ul>

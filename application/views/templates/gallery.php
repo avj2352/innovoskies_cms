@@ -37,7 +37,7 @@
           <div class="well">
             <ul class="list-group">
               <li class="list-group-item">
-                <span class="badge">4</span>
+                <span class="badge"><?php echo $articles_count; ?></span>
                   <div style="font-size:18px; color: #FBB25A;"><a href="#">News Articles</a></div>
               </li>
             </ul>
